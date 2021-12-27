@@ -1,19 +1,31 @@
-class Bracket implements IBracket{
-    public async bracket(body: any): Promise<IReturnResponse> {
-
-        if(!body.bracket){
-            return {data: "bracket is empty"}
+class Bracket {
+    public async bracket(body: any): Promise<any> {
+        const bracket = body.bracket
+        if (!body.bracket.length) {
+            return { data: "bracket is empty" }
         }
-        const correctbracket = ['()', '(())', '[]', '[[]]', '{}', '{{}}', '{()}']
-        for (let i = 0; i <= correctbracket.length; i++) {
-            if (body.bracket === correctbracket[i]) {
+        let stack: string[] = []
+        for (let i = 0; i < bracket.length; i++) {
+            const last = stack[stack.length - 1]
+            if (bracket[i] === '(' ) {
+                stack.push(bracket[i])
+            } else if (bracket[bracket.length - 1] === ')') {
+                stack.push(bracket[bracket.length - 1])
+            }
+
+            console.log('stack ========', stack);
+            const join = stack.join('')
+            console.log('join =======', join);
+
+            if (bracket === join) {
                 return {
                     data: 1
                 }
             }
+
         }
         return {
-            data: 2
+            data: 0
         }
     }
 

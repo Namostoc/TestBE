@@ -1,3 +1,3 @@
-declare interface IString{
+declare interface IStringCtr{
     stringletter(body:any): Promise<IReturnResponse>
 }

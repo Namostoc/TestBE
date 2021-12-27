@@ -1,5 +1,5 @@
-class stringLetter implements IString{
-    public async stringletter(body: any): Promise<IReturnResponse> {
+class stringLetter {
+    public async stringletter(body: any): Promise<any> {
         const inputstr = body.message
 
 

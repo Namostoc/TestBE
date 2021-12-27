@@ -1,14 +1,14 @@
-class Sort implements ISortCtr {
-    public async SortArray(body: any): Promise<IReturnResponse> {
-        if (!body.number) {
+class Sort  {
+    public async SortArray(body: any): Promise<any> {
+        if (body.number.length === 0) {
             return {
                 data: "number is empty"
             }
         }
-        const sortarray = body.number.sort(function (a, b) { return a - b })
+        const sortarray = body.number.sort(function (a:any, b:any) { return a - b })
         console.log('sortarray ======= ', sortarray);
-        const max = sortarray.slice(sortarray.length - 3)
-        const min = sortarray.slice(0, 3)
+        const max: number[] = sortarray.slice(sortarray.length - 3)
+        const min: number[] = sortarray.slice(0, 3)
         return {
             data: {
                 "max": max,
