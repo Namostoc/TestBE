@@ -1,4 +1,4 @@
-class stringLetter {
+class stringLetter  {
     public async stringletter(body: any): Promise<any> {
         const inputstr = body.message
 
