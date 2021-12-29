@@ -14,7 +14,6 @@ const router = Router()
 router.post('/' , async (req: Request, res: Response) => {
     const sortCtr: ISortCtr = new Sort()
     const sortArray: any = await sortCtr.SortArray(req.body)
-    console.log(sortArray)
     res.status(200).json(sortArray)
 })
 
