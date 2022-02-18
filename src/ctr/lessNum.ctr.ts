@@ -22,6 +22,14 @@ class LessNum {
                 data: 'No data in array'
             }
         }
+        let numbers = inputNumber.every(element => typeof element === 'number')
+        if(!numbers){
+            return {
+                data: 'data in array must be numbers'
+            }
+        }
+
+
         let Sort = inputNumber.sort(function (a: any, b: any) { return b - a })
         console.log('sort==== ', Sort);
 
@@ -45,6 +53,8 @@ class LessNum {
                     
                 }
             }
+            
+            
             string += `{${putarray[i]}:${count}}`
         }
         
