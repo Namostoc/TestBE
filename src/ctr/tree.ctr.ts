@@ -78,9 +78,7 @@ class Tree {
 
 
 
-        return {
-            data: txt
-        }
+        return txt
     }
 }
 

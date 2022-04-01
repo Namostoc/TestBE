@@ -1,5 +1,7 @@
 import { Request, Response, Router } from 'express';
+import { async } from 'rxjs';
 import Bracket from '../ctr/bracket.ctr'
+
 
 
 declare interface IBracket{
@@ -16,5 +18,7 @@ router.post('/', async (req: Request, res: Response) => {
     const bracket:IReturnResponse = await  bracketCtr.bracket(req.body)
     res.status(200).json(bracket)
 })
+
+
 
 export default router

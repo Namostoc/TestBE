@@ -13,7 +13,7 @@ const router = Router()
 router.post('/' , async (req: Request, res: Response) =>{
     const treeCtr: ITree = new Tree()
     const Maketree: IReturnResponse = await treeCtr.maketree(req.body)
-    res.status(200).json(Maketree)
+    res.status(200).send(Maketree)
 })
 
 export default router
