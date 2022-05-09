@@ -17,22 +17,21 @@ class Letters {
             }
         }
 
+
+//Number of index
         let arr = []
         let count = 0
         let string = ''
         let count2 = 0
-        for (let i = 0; i < letters.length; i++) {
-            count++
-            if (input === count) {
-                arr.push(letters[i])
-                count2++
-                arr.push(letters[i])
-                count2++
-                
-            }else if (count2 >= 1){
-                arr.push(letters[i])
+        for(let j = 0 ; j < input.length ; j++){
+            for (let i = 0; i < letters.length; i++) {
+                if(input[j] === letters[i]){
+                    arr.push((i + 1)*1)
+                }
             }
+
         }
+        
         console.log('arr ===', arr);
         console.log('count2 ===', count2);
         
